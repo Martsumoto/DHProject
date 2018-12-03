@@ -8,4 +8,5 @@
     <color name="button_book_background_color">#ffEF3A5D</color>
     <color name="chat_button_border_color">#1F000000</color>
     <color name="background_color">#edeef0</color>
+    <color name="yellow">#FFFF00</color>
 </resources>

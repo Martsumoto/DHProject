@@ -15,7 +15,6 @@ public class ImageHelper {
                 .into(imageView);
     }
 
-
     public static Drawable getDrawableFromId(Context context, int drawableId) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return context.getResources().getDrawable(drawableId, context.getTheme());

@@ -52,7 +52,8 @@ public class MyHeroesAdapter extends RecyclerView.Adapter<MyHeroesAdapter.ViewHo
             user = hero.getUser();
 
             holder.name.setText(user.getFirstName());
-            ImageHelper.loadImage(this.mContext, user.getImageUrl(), R.drawable.host_list_icon_badge, holder.imgHeroAvatar);
+            ImageHelper.loadImage(this.mContext, user.getImageUrl(),
+                    android.R.drawable.ic_dialog_alert, holder.imgHeroAvatar);
             holder.price.setText(NumberUtil.formatNumberToCurrencyText(hero.getPrice()));
             holder.txtNeighborhood.setText(hero.getAddresssNeighborhood());
 

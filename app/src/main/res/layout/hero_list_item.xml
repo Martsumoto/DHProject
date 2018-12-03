@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:isIndicator="true"
             style="?android:attr/ratingBarStyleSmall"
+            android:progressTint="@color/yellow"
             android:rating="5"
             android:numStars="5" />
     </LinearLayout>
