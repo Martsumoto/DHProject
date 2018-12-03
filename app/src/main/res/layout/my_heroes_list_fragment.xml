@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/my_heroes_title"
+        style="@style/FragmentTitle" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/recentsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/subHeaderRecents"
+                android:text="@string/recent_hero_subtitle"
+                style="@style/SubHeaderStyle"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listHeroesRecents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ProgressBar
+                android:id="@+id/progressBarRecents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/favoritesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/subHeaderFavorites"
+                android:text="@string/favorite_hero_subtitle"
+                style="@style/SubHeaderStyle" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listHeroesFavorites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ProgressBar
+                android:id="@+id/progressBarFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

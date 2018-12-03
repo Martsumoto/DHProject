@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/bottom_navigation_search"/>
+    <item
+        android:id="@+id/action_messages"
+        android:icon="@android:drawable/sym_action_chat"
+        android:title="@string/bottom_navigation_messages"/>
+    <item
+        android:id="@+id/action_heroes"
+        android:icon="@drawable/icon_like_border_vector_gray_battleship"
+        android:title="@string/bottom_navigation_heroes"/>
+    <item
+        android:id="@+id/action_bookings"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/bottom_navigation_bookings"/>
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@android:drawable/ic_menu_more"
+        android:title="@string/bottom_navigation_menu"/>
+</menu>

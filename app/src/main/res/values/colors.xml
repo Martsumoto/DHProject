@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="primary_text_color">#A8000000</color>
+    <color name="secondary_text_color">#6b000000</color>
+    <color name="button_book_background_color">#ffEF3A5D</color>
+    <color name="chat_button_border_color">#1F000000</color>
+    <color name="background_color">#edeef0</color>
+</resources>
