@@ -60,13 +60,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:orientation="vertical">
-        <!--
-        <ImageView
-            android:id="@+id/imgFavorite"
-            android:src="@drawable/icon_like_border_vector_gray_battleship"
-            android:layout_gravity="end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>-->
         <br.com.doghero.dhproject.components.FavoriteIcon
             android:layout_width="@dimen/medium_image_size"
             android:layout_height="@dimen/medium_image_size"

@@ -8,7 +8,7 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/bottom_navigation_view_height"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation_items"
         app:labelVisibilityMode="labeled"/>
@@ -19,6 +19,5 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
         android:layout_above="@id/bottomNavigationView"/>
-
 
 </RelativeLayout>

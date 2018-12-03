@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -20,6 +21,9 @@ import butterknife.ButterKnife;
  * https://www.truiton.com/2017/01/android-bottom-navigation-bar-example/
  */
 public class MainAcitivity extends FragmentActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private static final String MY_HEROES_FRAGMENT = "MY_HEROES_FRAGMENT";
+    private static final String SELECTED_FRAGMENT = "SELECTED_FRAGMENT";
 
     @BindView(R.id.bottomNavigationView)
     BottomNavigationView bottomNavigationView;
@@ -42,16 +46,41 @@ public class MainAcitivity extends FragmentActivity implements BottomNavigationV
 
         mViewModel = ViewModelProviders.of(this).get(DHViewModel.class);
 
-        this.setupFirstFragment();
+        int selectedFragment = R.id.action_search;
+
+        if (savedInstanceState != null) {
+            FragmentManager fm = getSupportFragmentManager();
+            mMyHeroesListFragment = (MyHeroesListFragment) fm.findFragmentByTag(MY_HEROES_FRAGMENT);
+
+            selectedFragment = savedInstanceState.getInt(SELECTED_FRAGMENT);
+        }
+        this.replaceFragment(selectedFragment);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SELECTED_FRAGMENT, bottomNavigationView.getSelectedItemId());
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment selectedFragment = null;
+        String tag = null;
 
-        switch (item.getItemId()) {
+        this.replaceFragment(item.getItemId());
+
+        return true;
+    }
+
+    private void replaceFragment(int id) {
+        Fragment selectedFragment = null;
+        String tag = null;
+
+        switch (id) {
             case R.id.action_search:
                 selectedFragment = this.getMyHeroesListFragment();
+                tag = MY_HEROES_FRAGMENT;
                 break;
             case R.id.action_messages:
             case R.id.action_heroes:
@@ -62,23 +91,15 @@ public class MainAcitivity extends FragmentActivity implements BottomNavigationV
         }
 
         FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameLayout, selectedFragment);
-        transaction.commit();
-
-        return true;
-    }
-
-    private void setupFirstFragment() {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameLayout, this.getMyHeroesListFragment());
+        transaction.replace(R.id.frameLayout, selectedFragment, tag);
         transaction.commit();
     }
-
 
     private MyHeroesListFragment getMyHeroesListFragment() {
         if (this.mMyHeroesListFragment == null) {
             this.mMyHeroesListFragment = new MyHeroesListFragment();
             this.mMyHeroesListFragment.setViewModel(this.mViewModel);
+            this.mMyHeroesListFragment.setRetainInstance(true);
         }
 
         return this.mMyHeroesListFragment;
