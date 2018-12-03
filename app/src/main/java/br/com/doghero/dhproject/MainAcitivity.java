@@ -65,11 +65,7 @@ public class MainAcitivity extends FragmentActivity implements BottomNavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment selectedFragment = null;
-        String tag = null;
-
         this.replaceFragment(item.getItemId());
-
         return true;
     }
 
