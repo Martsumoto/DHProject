@@ -1,4 +1,4 @@
-package br.com.doghero.dhproject.images;
+package br.com.doghero.dhproject.util;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

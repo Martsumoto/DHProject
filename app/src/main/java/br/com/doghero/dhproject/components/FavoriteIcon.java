@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import br.com.doghero.dhproject.R;
-import br.com.doghero.dhproject.images.ImageHelper;
+import br.com.doghero.dhproject.util.ImageHelper;
 
 public class FavoriteIcon extends AppCompatImageView implements View.OnClickListener {
 

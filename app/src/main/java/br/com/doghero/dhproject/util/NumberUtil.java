@@ -1,4 +1,4 @@
-package br.com.doghero.dhproject;
+package br.com.doghero.dhproject.util;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;

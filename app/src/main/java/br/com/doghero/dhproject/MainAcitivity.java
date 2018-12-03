@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import br.com.doghero.dhproject.myHeroes.MyHeroesListFragment;
+import br.com.doghero.dhproject.util.BottomNavigationMenuUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -36,13 +37,13 @@ public class MainAcitivity extends FragmentActivity implements BottomNavigationV
         setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
 
+        BottomNavigationMenuUtil.removePaddingFromActiveItem(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
         mViewModel = ViewModelProviders.of(this).get(DHViewModel.class);
 
         this.setupFirstFragment();
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

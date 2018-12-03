@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.com.doghero.dhproject.NumberUtil;
+import br.com.doghero.dhproject.util.NumberUtil;
 import br.com.doghero.dhproject.R;
-import br.com.doghero.dhproject.images.ImageHelper;
+import br.com.doghero.dhproject.util.ImageHelper;
 import br.com.doghero.dhproject.model.Hero;
 import br.com.doghero.dhproject.model.User;
 import butterknife.BindView;
